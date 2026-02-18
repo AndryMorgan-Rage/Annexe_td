@@ -1,4 +1,5 @@
 package DAO;
+import Services.InvoiceStatus;
 import Services.InvoiceStatusTotals;
 import Services.InvoiceTaxSummary;
 import Services.InvoiceTotale;
@@ -29,7 +30,7 @@ public class DataRetriever {
                 totals.add(new InvoiceTotale(
                         rs.getInt("id"),
                         rs.getString("customer_name"),
-                        rs.getString("status"),
+                        InvoiceStatus.valueOf(rs.getString("status")),
                         rs.getDouble("total_amount")
                 ));
             }
@@ -59,7 +60,7 @@ public class DataRetriever {
                 totals.add(new InvoiceTotale(
                         rs.getInt("id"),
                         rs.getString("customer_name"),
-                        rs.getString("status"),
+                        InvoiceStatus.valueOf(rs.getString("status")),
                         rs.getDouble("total_amount")
                 ));
             }

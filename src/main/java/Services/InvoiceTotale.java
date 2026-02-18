@@ -3,10 +3,10 @@ package Services;
 public class InvoiceTotale {
     private int id;
     private String customerName;
-    private String status;
+    private InvoiceStatus status;
     private double totalAmount;
 
-    public InvoiceTotale(int id, String customerName, String status, double totalAmount) {
+    public InvoiceTotale(int id, String customerName, InvoiceStatus status, double totalAmount) {
         this.id = id;
         this.customerName = customerName;
         this.status = status;
@@ -29,11 +29,11 @@ public class InvoiceTotale {
         this.customerName = customerName;
     }
 
-    public String getStatus() {
+    public InvoiceStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(InvoiceStatus status) {
         this.status = status;
     }
 
@@ -50,8 +50,10 @@ public class InvoiceTotale {
         return "InvoiceTotale{" +
                 "id=" + id +
                 ", customerName='" + customerName + '\'' +
-                ", status='" + status + '\'' +
+                ", status=" + status +
                 ", totalAmount=" + totalAmount +
                 '}';
     }
 }
+
+
