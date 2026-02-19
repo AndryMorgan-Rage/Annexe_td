@@ -6,7 +6,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -53,7 +52,7 @@ public class AnnexeTest {
         System.out.println("\nQ5-A - findInvoiceTaxSummaries() :");
         q5aResults.forEach(System.out::println);
         // Vérification Alice TTC : 250 * 1.2 = 300
-        assertEquals(300.0, q5aResults.get(0).totalTtc());
+        assertEquals(300.0, q5aResults.get(0).getTotalTtc());
 
         // Q5-B - CA TTC Pondéré
         BigDecimal q5bWeightedTtc = retriever.computeWeightedTurnoverTtc();
